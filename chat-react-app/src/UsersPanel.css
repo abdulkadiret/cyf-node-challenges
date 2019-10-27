@@ -1,0 +1,9 @@
+.user-pane {
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.us-dis {
+  padding-top: 10px;
+}
