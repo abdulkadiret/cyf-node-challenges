@@ -2,19 +2,15 @@
   background-image: url("https://media1.thehungryjpeg.com/thumbs/800_3447866_b199bdf48a7a2fcc657f235d7d6f82f2aee43686.jpg");
   background-size: cover;
   background-position: center;
-  /* border: 4px solid green; */
-  /* min-height: 100%; */
-  /* padding-top: 20px; */
-  height: 100vh;
-  max-width: 100vw;
   position: absolute;
+  border: 1px solid gainsboro;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
   overflow: hidden;
   display: grid;
-  grid-template-columns: 1fr 5fr;
+  grid-template-columns: 1fr 1fr;
   grid-template-rows: 70px 6fr;
   grid-template-areas:
     "h h"
@@ -23,16 +19,12 @@
 
 .app-header {
   grid-area: h;
-  /* display: block; */
   text-align: center;
+  padding-top: 1rem;
   color: rgb(12, 2, 2);
   padding-bottom: 5px;
   background: rgba(109, 108, 109, 0.274);
   border-bottom: 2px solid gainsboro;
-}
-
-.app-title {
-  padding-top: 1rem;
 }
 
 .chat-app {
@@ -40,8 +32,9 @@
   display: grid;
   height: 100%;
   grid-template-columns: 1fr 5fr;
-  grid-template-rows: 5fr 70px;
+  grid-template-rows: 0.2fr 4fr 70px;
   grid-template-areas:
+    "ud m"
     "u m"
     "u t";
   overflow: auto;
@@ -52,16 +45,14 @@
   padding-left: 10px;
   background: rgba(109, 108, 109, 0.274);
   height: 100%;
-  position: relative;
-  overflow: hidden;
-  overflow-wrap: break-word;
+  overflow: auto;
+  min-width: 120px;
 }
 
-.message-board {
+.messages-board {
   grid-area: m;
   padding-top: 10px;
   padding-right: 50px;
-  position: relative;
   overflow: auto;
   overflow-x: hidden;
 }
@@ -71,18 +62,73 @@
   background: rgba(109, 108, 109, 0.274);
   text-align: center;
   overflow: auto;
-  position: relative;
 }
 
-.app-login {
-  grid-area: c;
-  margin-top: 20px;
+.users-display {
+  grid-area: ud;
   text-align: center;
+  background: rgba(109, 108, 109, 0.274);
+  height: 100%;
+  min-width: 120px;
 }
 
-.card {
-  background-color: #f1f1f1;
-  padding: 5px;
-  overflow: auto;
-  max-width: 350px;
+.app-title {
+  text-shadow: 5rem;
 }
+
+@media only screen and (max-width: 680px) {
+  .app {
+    background-image: url("https://backgrounddownload.com/wp-content/uploads/2018/09/chat-background-tumblr-3.jpg");
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    border: 1px solid gainsboro;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 0.5fr 0.5fr;
+    grid-template-rows: 70px 6fr;
+    grid-template-areas:
+      "h h"
+      "c c";
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .chat-app {
+    grid-area: c;
+    display: grid;
+    height: 100%;
+    grid-template-columns: 5fr 1fr;
+    grid-template-rows: 0.2fr 4fr 50px;
+    grid-template-areas:
+      "m ud"
+      "m u"
+      "t u";
+    overflow: auto;
+  }
+}
+
+/* @media only screen and (max-width: 767px) {
+  .app {
+    background-image: url("https://previews.123rf.com/images/amasterpics123/amasterpics1231202/amasterpics123120200180/12432513-chatting-online-concept-3d-man-using-laptop-computer-with-speech-bubble-on-white-background.jpg");
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    border: 1px solid gainsboro;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 0.5fr 0.5fr;
+    grid-template-rows: 70px 6fr;
+    grid-template-areas:
+      "h h"
+      "c c";
+  }
+} */
