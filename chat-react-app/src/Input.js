@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-// import Button from "./Button";
-import "./input.css";
+import "./Input.css";
 
 class Form extends Component {
   constructor(props) {
@@ -17,18 +16,18 @@ class Form extends Component {
     });
   };
 
-  postTheInputText = e => {
+  handleMessagePost = e => {
     e.preventDefault();
-    const url = "http://localhost:3002/messages";
+    const url = "http://localhost:3002/api/messages";
+    const userId = localStorage.getItem("userId");
     fetch(url, {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
-        // id: 34,
-        from: this.props.username,
-        text: this.state.input
+        userId,
+        message: this.state.input
       })
     })
       .then(res => {
@@ -43,7 +42,7 @@ class Form extends Component {
         }
       })
       .then(data => {
-        this.props.onSentMessage();
+        this.props.handleOnSentMessage();
         this.setState({
           input: ""
         });
@@ -55,19 +54,18 @@ class Form extends Component {
     return (
       <form
         className="input-form"
-        onSubmit={this.postTheInputText}
+        onSubmit={this.handleMessagePost}
         type="submit"
       >
         <input
           scrolling="no"
-          className="text-input scroll "
+          className="text-input scroll"
           type="text"
           name="chatText"
           value={this.state.input}
           placeholder="Write your message... and hit ENTER"
           onChange={this.handleChange}
         />
-        {/* <button>send</button> */}
       </form>
     );
   }
