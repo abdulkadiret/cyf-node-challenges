@@ -1,29 +1,98 @@
 import React, { Component } from "react";
+import "./Login.css";
+import Button from "./Button";
+import { Link } from "react-router-dom";
 
 class Login extends Component {
-  login = e => {
+  state = {
+    email: null,
+    password: "",
+    isError: false
+  };
+
+  onLogin = e => {
     e.preventDefault();
-    this.props.setUsername(e.target.logInName.value);
+    const { email, password } = this.state;
+    if (email && password) {
+      const url = "http://localhost:3002/api/users/login";
+      fetch(url, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ email, password })
+      })
+        .then(res => res.json())
+        .then(res => {
+          if (res && res.success) {
+            localStorage.setItem("user", res.data.name);
+            localStorage.setItem(
+              "signedInUserId",
+              res.signedIn.signed_in_user_id
+            );
+            localStorage.setItem("userId", res.data.user_id);
+
+            window.location.href = "/";
+          } else {
+            this.setState({
+              isError: true,
+              message: res.data.message
+            });
+          }
+        })
+        .catch(error => {
+          this.setState({
+            isError: true,
+            message: "There is an error occurred, Please try again!"
+          });
+        });
+    }
+  };
+
+  handleInputChange = e => {
+    e.preventDefault();
+    this.setState({
+      [e.target.name]: e.target.value
+    });
   };
 
   render() {
     return (
-      <div>
-        <form onSubmit={this.login}>
-          <label>
-            <strong>Username</strong>
-          </label>
-          <br />
-          <input
-            id="logInName"
-            placeholder="Enter Your name..."
-            type="text"
-          ></input>
-          <br />
-          <button type="submit" className="btn btn-primary m-2">
-            Log in
-          </button>
-        </form>
+      <div className="app">
+        <div className="app-login">
+          <form onSubmit={this.onLogin}>
+            <div>
+              <label>
+                <strong>Email: </strong>
+              </label>
+              <input
+                className="login"
+                name="email"
+                placeholder="email"
+                type="email"
+                onChange={this.handleInputChange}
+              />
+            </div>
+            <div>
+              <label>
+                <strong>Password: </strong>
+              </label>
+              <input
+                className="login"
+                name="password"
+                placeholder="password"
+                type="password"
+                onChange={this.handleInputChange}
+              />
+            </div>
+            <Button name="Login" />
+            <br />
+            <p>
+              If you don't have an account <Link to="/signup">click here</Link>{" "}
+              to creat an account
+            </p>
+          </form>
+        </div>
       </div>
     );
   }
