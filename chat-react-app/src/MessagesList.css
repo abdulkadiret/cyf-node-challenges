@@ -25,7 +25,7 @@
   display: inline-block;
   color: rgb(216, 232, 240);
   margin-block-start: 15px;
-  float: right;
+  float: none;
 }
 
 .fa-trash {
