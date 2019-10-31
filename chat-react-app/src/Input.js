@@ -42,7 +42,6 @@ class Form extends Component {
         }
       })
       .then(data => {
-        this.props.handleOnSentMessage();
         this.setState({
           input: ""
         });
