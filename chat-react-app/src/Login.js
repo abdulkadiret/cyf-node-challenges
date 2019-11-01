@@ -62,9 +62,6 @@ class Login extends Component {
         <div className="app-login">
           <form onSubmit={this.onLogin}>
             <div>
-              <label>
-                <strong>Email: </strong>
-              </label>
               <input
                 className="login"
                 name="email"
@@ -74,9 +71,6 @@ class Login extends Component {
               />
             </div>
             <div>
-              <label>
-                <strong>Password: </strong>
-              </label>
               <input
                 className="login"
                 name="password"
