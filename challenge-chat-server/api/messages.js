@@ -4,7 +4,8 @@ const {
   getAllMessages,
   getMessageByUserId,
   createMessage,
-  deleteMessage
+  deleteMessage,
+  updateMessage
 } = require("../services/database/messages");
 
 /**
@@ -45,6 +46,17 @@ router.post("/", (req, res) => {
 router.delete("/:messageId", (req, res) => {
   const { messageId } = req.params;
   deleteMessage(messageId)
+    .then(data => {
+      res.send(data);
+    })
+    .catch(err => {
+      res.status(500);
+    });
+});
+
+router.put("/:messageId", (req, res) => {
+  const { messageId } = req.params;
+  updateMessage(messageId)
     .then(data => {
       res.send(data);
     })
