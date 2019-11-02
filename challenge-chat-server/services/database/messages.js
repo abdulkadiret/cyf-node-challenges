@@ -62,9 +62,25 @@ const deleteMessage = messageId => {
     );
   });
 };
+
+const updateMessage = messageId => {
+  return new Promise((resolve, reject) => {
+    pool.query(
+      `UPDATE FROM messages WHERE message_id =${messageId}`,
+      (error, result) => {
+        if (error) {
+          reject(error);
+        }
+        resolve(result.rows);
+      }
+    );
+  });
+};
+
 module.exports = {
   getAllMessages,
   getMessageByUserId,
   createMessage,
-  deleteMessage
+  deleteMessage,
+  updateMessage
 };
