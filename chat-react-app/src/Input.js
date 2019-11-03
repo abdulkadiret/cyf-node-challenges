@@ -18,6 +18,7 @@ class Form extends Component {
 
   handleMessagePost = e => {
     e.preventDefault();
+    if (!this.state.input) return;
     const url = "http://localhost:3002/api/messages";
     const userId = localStorage.getItem("userId");
     fetch(url, {
@@ -30,18 +31,7 @@ class Form extends Component {
         message: this.state.input
       })
     })
-      .then(res => {
-        if (res.status >= 200 && res.status <= 299) {
-          return res.json();
-        } else if (res.status === 400) {
-          alert("write an input message");
-        } else if (res.status === 401) {
-          alert("Message should be at last three characters");
-        } else {
-          alert("Please try again");
-        }
-      })
-      .then(data => {
+      .then(() => {
         this.setState({
           input: ""
         });
