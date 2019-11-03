@@ -3,10 +3,10 @@ const app = express();
 const bodyParser = require("body-parser");
 const users = require("./api/users");
 const messages = require("./api/messages");
+const cors = require("cors");
 
 app.use(bodyParser.json());
 app.use(express.json());
-const cors = require("cors");
 app.use(cors());
 
 app.use("/api/users", users);
