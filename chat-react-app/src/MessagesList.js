@@ -43,6 +43,10 @@ class MessagesList extends Component {
   }
 
   changeEditMode = (e, editModeId) => {
+    if (!this.state.input && this.state.isInEditMode) {
+      // TODO handle error message for the user
+      return;
+    }
     if (this.state.isInEditMode) {
       this.handleEditMessage(e, editModeId);
     }
