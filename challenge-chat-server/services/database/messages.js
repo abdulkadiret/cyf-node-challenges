@@ -66,7 +66,7 @@ const deleteMessage = messageId => {
 const updateMessage = ({ message, messageId }) => {
   return new Promise((resolve, reject) => {
     pool.query(
-      `UPDATE messages SET message=$1 WHERE message_id=$2 RETURNING message`,
+      `UPDATE messages SET message=$1 WHERE message_id=$2 RETURNING *`,
       [message, messageId],
       (error, result) => {
         if (error) {
