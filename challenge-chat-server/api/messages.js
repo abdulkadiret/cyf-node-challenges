@@ -56,7 +56,8 @@ router.delete("/:messageId", (req, res) => {
 
 router.put("/:messageId", (req, res) => {
   const { messageId } = req.params;
-  updateMessage(messageId)
+  const { message } = req.body;
+  updateMessage({ message, messageId })
     .then(data => {
       res.send(data);
     })
