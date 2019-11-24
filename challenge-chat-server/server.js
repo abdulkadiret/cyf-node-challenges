@@ -4,6 +4,7 @@ const bodyParser = require("body-parser");
 const users = require("./api/users");
 const messages = require("./api/messages");
 const cors = require("cors");
+const path = require("path");
 
 app.use(bodyParser.json());
 app.use(express.json());
