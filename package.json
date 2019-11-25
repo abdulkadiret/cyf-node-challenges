@@ -1,11 +1,11 @@
 {
   "name": "aye-chat-app",
   "version": "1.0.0",
-  "description": "social chat app",
+  "description": "This is a chat app",
   "main": "server.js",
   "scripts": {
     "install": "npm --prefix challenge-chat-server install && npm --prefix chat-react-app install",
-    "start": "npm run server.js",
+    "start": "npm run server",
     "server": "npm start --prefix challenge-chat-server",
     "client": "npm start --prefix chat-react-app",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
