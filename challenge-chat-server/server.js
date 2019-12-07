@@ -5,6 +5,7 @@ const users = require("./api/users");
 const messages = require("./api/messages");
 const cors = require("cors");
 const path = require("path");
+const port = process.env.PORT || 3002;
 
 app.use(bodyParser.json());
 app.use(express.json());
@@ -23,6 +24,6 @@ if (process.env.NODE_ENV === "production") {
   });
 }
 
-app.listen(process.env.PORT || 3002, function() {
+app.listen(port, () => {
   console.log("Server is listening on port 3002. Ready to accept requests!");
 });
