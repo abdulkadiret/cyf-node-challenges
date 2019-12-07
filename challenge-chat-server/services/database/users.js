@@ -63,6 +63,9 @@ const getUserByEmail = email => {
       "SELECT * FROM users where email = $1",
       [email],
       (error, result) => {
+        if (error) {
+          reject(error);
+        }
         resolve(result.rows[0]);
       }
     );
@@ -75,6 +78,9 @@ const getUserById = userId => {
       "SELECT * FROM users where user_id = $1",
       [userId],
       (error, result) => {
+        if (error) {
+          reject(error);
+        }
         resolve(result && result.rows[0]);
       }
     );

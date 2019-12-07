@@ -5,7 +5,8 @@ const {
   getMessageByUserId,
   createMessage,
   deleteMessage,
-  updateMessage
+  updateMessage,
+  getMessageByMessageId
 } = require("../services/database/messages");
 
 /**
@@ -13,6 +14,17 @@ const {
  */
 router.get("/", (req, res) => {
   getAllMessages()
+    .then(data => {
+      res.send(data);
+    })
+    .catch(err => {
+      res.status(500);
+    });
+});
+
+router.get("/:messageId", (req, res) => {
+  const { messageId } = req.params;
+  getMessageByMessageId(messageId)
     .then(data => {
       res.send(data);
     })

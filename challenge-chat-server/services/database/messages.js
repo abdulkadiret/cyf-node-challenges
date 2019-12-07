@@ -78,10 +78,26 @@ const updateMessage = ({ message, messageId }) => {
   });
 };
 
+const getMessageByMessageId = messageId => {
+  return new Promise(resolve => {
+    pool.query(
+      "SELECT * FROM messages where message_id = $1",
+      [messageId],
+      (error, result) => {
+        if (error) {
+          reject(error);
+        }
+        resolve(result && result.rows[0]);
+      }
+    );
+  });
+};
+
 module.exports = {
   getAllMessages,
   getMessageByUserId,
   createMessage,
   deleteMessage,
-  updateMessage
+  updateMessage,
+  getMessageByMessageId
 };
