@@ -42,8 +42,25 @@ class MessagesList extends Component {
     }
   }
 
+  changeToEditMode = (e, editModeId) => {
+    e.preventDefault();
+    console.log("chnageTOOOEDIT");
+    this.setState({
+      isInEditMode: true,
+      editModeId
+    });
+  };
+
+  cancelEditMode = () => {
+    console.log("cancelEditMode");
+    this.setState({
+      isInEditMode: false
+    });
+  };
+
   changeEditMode = (e, editModeId) => {
-    if (!this.state.input && this.state.isInEditMode) {
+    console.log("changeEditMode");
+    if (this.state.isInEditMode && !this.state.input) {
       // TODO handle error message for the user
       return;
     }
@@ -64,18 +81,35 @@ class MessagesList extends Component {
     this.onLoadMessages();
   };
 
+  // getMessageByMessageId = messageId => {
+  //   // const { message } = this.state;
+  //   const url = `http://localhost:3002/api/messages/${messageId}`;
+  //   fetch(url)
+  //     .then(res => {
+  //       res.json();
+  //     })
+  //     .then(data => {
+  //       console.log("getMessageByMessageId", data);
+  //       this.setState({ message: data.message });
+  //     })
+  //     .catch(error => console.error(error));
+  // };
+
   handleEditMessage = (e, messageId) => {
     e.preventDefault();
     const { input } = this.state;
+    console.log(input);
     const url = `http://localhost:3002/api/messages/${messageId}`;
     fetch(url, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json"
       },
+      // body: JSON.stringify({ message: this.getMessageByMessageId() })
       body: JSON.stringify({ message: input })
     })
       .then(res => res.json())
+      .then(data => console.log(data))
       .catch(error => console.error(error));
     this.onLoadMessages();
   };
@@ -87,14 +121,22 @@ class MessagesList extends Component {
   };
 
   scrollToEnd() {
-    console.log("called scrollToEnd");
     if (this.messagesEnd.current !== null) {
-      console.log("found messagesEnd");
       this.messagesEnd.current.scrollIntoView({
         behaviour: "smooth"
       });
     }
   }
+
+  // makeStyles = theme => ({
+  //   textField: {
+  //     marginLeft: theme.spacing(1),
+  //     marginRight: theme.spacing(1),
+  //     minWidth: 105,
+  //     minHeight: 50,
+  //     maxWidth: 350
+  //   }
+  // });
 
   render() {
     const userId = localStorage.getItem("userId");
@@ -106,14 +148,53 @@ class MessagesList extends Component {
             return (
               <li key={index}>
                 <div className="sender">{message.name}</div>
-                <p className="bubble">
+                <div className="bubble">
                   {isInEditMode && message.message_id === editModeId ? (
-                    <input
-                      autoFocus
-                      type="text"
-                      defaultValue={message.message}
-                      onChange={this.handleEditMessageInputChanges}
-                    />
+                    <form className="input-group">
+                      <textarea
+                        id="editTextarea"
+                        className="form-control"
+                        autoFocus
+                        onFocus={(this.defaultValue = this.onChange)}
+                        rows="4"
+                        // rows-max="45"
+                        type="text"
+                        spellCheck="true"
+                        defaultValue={message.message}
+                        onChange={this.handleEditMessageInputChanges}
+                        autoComplete="off"
+                      ></textarea>
+                      <span
+                        // className="input-group"
+                        style={{ display: "block" }}
+                      >
+                        <button
+                          type="button"
+                          onClick={this.cancelEditMode}
+                          className="btn-outline-danger ml-1"
+                          style={{
+                            display: "inline-block",
+                            float: "right"
+                          }}
+                        >
+                          <i className="fa fa-times"></i>
+                        </button>
+                        <button
+                          type="button"
+                          onClick={e =>
+                            this.changeEditMode(e, message.message_id)
+                          }
+                          className="btn-outline-success ml-0"
+                          style={{
+                            display: "inline-block",
+                            float: "right",
+                            position: "relative"
+                          }}
+                        >
+                          <i className="fa fa-check"></i>
+                        </button>
+                      </span>
+                    </form>
                   ) : (
                     message.message
                   )}
@@ -121,7 +202,7 @@ class MessagesList extends Component {
                   {JSON.parse(userId) === message.user_id ? (
                     <span style={{ display: "block" }}>
                       <button
-                        className="link-button"
+                        className="btn btn-link p-0 ml-1 mr-1"
                         style={{ display: "inline-block", float: "right" }}
                         onClick={() =>
                           window.confirm(
@@ -132,22 +213,23 @@ class MessagesList extends Component {
                         <i className="fa fa-trash fa-lg"></i>
                       </button>
                       <button
-                        className="link-button"
+                        className="btn btn-link p-0 ml-0 mr-1"
                         style={{
-                          display: "inline-block",
-                          float: "right",
-                          marginRight: "10px"
+                          display: "block",
+                          float: "right"
                         }}
                         onClick={e =>
-                          this.changeEditMode(e, message.message_id)
+                          this.changeToEditMode(e, message.message_id)
                         }
-                        id={"edit-" + message.id}
                       >
-                        <i className="fa fa-pencil-square-o fa-lg"></i>
+                        {isInEditMode &&
+                        message.message_id === editModeId ? null : (
+                          <i className="fa fa-pencil-square-o fa-lg"></i>
+                        )}
                       </button>
                     </span>
                   ) : null}
-                </p>
+                </div>
               </li>
             );
           })}

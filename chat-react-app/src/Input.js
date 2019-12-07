@@ -54,6 +54,7 @@ class Form extends Component {
           value={this.state.input}
           placeholder="Write your message... and hit ENTER"
           onChange={this.handleChange}
+          autoComplete="off"
         />
       </form>
     );
