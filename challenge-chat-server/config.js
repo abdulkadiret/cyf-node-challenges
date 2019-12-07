@@ -7,8 +7,8 @@ const config = {
     port: 5432
   },
   production: {
-    connectionString: process.env.DATABASE_URL,
-    ssl: true
+    connectionString: process.env.DATABASE_URL
+    // ssl: true
   }
 };
 

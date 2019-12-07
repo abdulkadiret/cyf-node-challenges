@@ -15,15 +15,18 @@ app.use("/api/users", users);
 app.use("/api/messages", messages);
 
 if (process.env.NODE_ENV === "production") {
-  app.use(express.static("chat-react-app/build"));
+  app.use(
+    "/",
+    express.static(path.resolve(__dirname, "../chat-react-app/build"))
+  );
 
   app.get("*", (req, res) => {
     res.sendFile(
-      path.resolve(__dirname, "../chat-react-app", "build", "index.html")
+      path.resolve(__dirname, "../chat-react-app/build", "index.html")
     );
   });
 }
 
 app.listen(port, () => {
-  console.log("Server is listening on port 3002. Ready to accept requests!");
+  console.log(`Server is listening on port ${port}. Ready to accept requests!`);
 });
