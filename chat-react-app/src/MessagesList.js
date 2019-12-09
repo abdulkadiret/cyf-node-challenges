@@ -128,16 +128,6 @@ class MessagesList extends Component {
     }
   }
 
-  // makeStyles = theme => ({
-  //   textField: {
-  //     marginLeft: theme.spacing(1),
-  //     marginRight: theme.spacing(1),
-  //     minWidth: 105,
-  //     minHeight: 50,
-  //     maxWidth: 350
-  //   }
-  // });
-
   render() {
     const userId = localStorage.getItem("userId");
     const { isInEditMode, editModeId } = this.state;
