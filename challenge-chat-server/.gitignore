@@ -1,0 +1,8 @@
+# dependencies
+/node_modules
+
+# Compiled binary addons (https://nodejs.org/api/addons.html)
+build/Release
+
+# dotenv environment variables file
+.env
