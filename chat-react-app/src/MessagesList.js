@@ -19,7 +19,7 @@ class MessagesList extends Component {
   };
 
   onLoadMessages = () => {
-    const url = "http://localhost:3002/api/messages";
+    const url = "/api/messages";
     fetch(url)
       .then(res => res.json())
       .then(data => {
@@ -74,7 +74,7 @@ class MessagesList extends Component {
   };
 
   handleDeleteMessage = messageId => {
-    const url = `http://localhost:3002/api/messages/${messageId}`;
+    const url = `/api/messages/${messageId}`;
     fetch(url, {
       method: "DELETE"
     });
@@ -83,7 +83,7 @@ class MessagesList extends Component {
 
   // getMessageByMessageId = messageId => {
   //   // const { message } = this.state;
-  //   const url = `http://localhost:3002/api/messages/${messageId}`;
+  //   const url = `/api/messages/${messageId}`;
   //   fetch(url)
   //     .then(res => {
   //       res.json();
@@ -99,7 +99,7 @@ class MessagesList extends Component {
     e.preventDefault();
     const { input } = this.state;
     console.log(input);
-    const url = `http://localhost:3002/api/messages/${messageId}`;
+    const url = `/api/messages/${messageId}`;
     fetch(url, {
       method: "PUT",
       headers: {

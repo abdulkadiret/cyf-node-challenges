@@ -15,7 +15,7 @@ class UsersPanel extends Component {
   }
 
   getUsers = () => {
-    const url = "http://localhost:3002/api/users/signed-in";
+    const url = "/api/users/signed-in";
     fetch(url)
       .then(res => res.json())
       .then(data => {

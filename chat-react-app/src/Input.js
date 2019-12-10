@@ -19,7 +19,7 @@ class Form extends Component {
   handleMessagePost = e => {
     e.preventDefault();
     if (!this.state.input) return;
-    const url = "http://localhost:3002/api/messages";
+    const url = "/api/messages";
     const userId = localStorage.getItem("userId");
     fetch(url, {
       method: "POST",

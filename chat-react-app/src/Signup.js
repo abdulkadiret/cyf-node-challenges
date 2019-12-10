@@ -21,7 +21,7 @@ class Signup extends Component {
     console.log(this.state);
     const { name, email, password } = this.state;
     if (name && email && password) {
-      const url = "http://localhost:3002/api/users";
+      const url = "/api/users";
       fetch(url, {
         method: "POST",
         headers: {

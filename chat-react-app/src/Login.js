@@ -14,7 +14,7 @@ class Login extends Component {
     e.preventDefault();
     const { email, password } = this.state;
     if (email && password) {
-      const url = "http://localhost:3002/api/users/login";
+      const url = "/api/users/login";
       fetch(url, {
         method: "POST",
         headers: {

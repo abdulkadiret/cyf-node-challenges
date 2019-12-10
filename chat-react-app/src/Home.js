@@ -15,7 +15,7 @@ class Home extends Component {
 
   handleLogout = () => {
     const signedInUserId = localStorage.getItem("signedInUserId");
-    const url = `http://localhost:3002/api/users/signed-in/${signedInUserId}`;
+    const url = `/api/users/signed-in/${signedInUserId}`;
     fetch(url, {
       method: "DELETE",
       headers: {
