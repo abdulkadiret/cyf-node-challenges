@@ -58,7 +58,7 @@ const removeSignedInUser = userId => {
 };
 
 const getUserByEmail = email => {
-  return new Promise(resolve => {
+  return new Promise((resolve, reject) => {
     pool.query(
       "SELECT * FROM users where email = $1",
       [email],
@@ -73,7 +73,7 @@ const getUserByEmail = email => {
 };
 
 const getUserById = userId => {
-  return new Promise(resolve => {
+  return new Promise((resolve, reject) => {
     pool.query(
       "SELECT * FROM users where user_id = $1",
       [userId],
