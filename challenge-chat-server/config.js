@@ -1,9 +1,9 @@
 const config = {
   development: {
-    user: "akey",
-    host: "localhost",
-    database: "chat_app",
-    password: "password",
+    user: process.env.DB_USER || "akey",
+    host: process.env.DB_HOST || "localhost",
+    database: process.env.DB_NAME || "chat_app",
+    password: process.env.DB_PASSWORD || "password",
     port: 5432
   },
   production: {
