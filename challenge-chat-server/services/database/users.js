@@ -66,7 +66,7 @@ const getUserByEmail = email => {
         if (error) {
           reject(error);
         }
-        resolve(result.rows[0]);
+        resolve(result && result.rows[0]);
       }
     );
   });
