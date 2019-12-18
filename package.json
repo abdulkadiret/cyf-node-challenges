@@ -4,11 +4,9 @@
   "description": "This is a chat app",
   "main": "server.js",
   "scripts": {
-    "install": "npm --prefix challenge-chat-server install && npm --prefix chat-react-app install",
-    "start": "npm --prefix challenge-chat-server start",
-    "server": "npm start --prefix challenge-chat-server",
-    "client": "npm start --prefix chat-react-app",
-    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "start": "npm install --prefix challenge-chat-server && npm start --prefix challenge-chat-server",
+    "dev:client": "npm install --prefix chat-react-app && npm start --prefix chat-react-app",
+    "dev:server": "npm install --prefix challenge-chat-server && npm run dev --prefix challenge-chat-server",
     "heroku-postbuild": "npm install --prefix chat-react-app && npm run build --prefix chat-react-app"
   },
   "cacheDirectories": [
