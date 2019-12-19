@@ -10,6 +10,7 @@
   bottom: 0;
   overflow: hidden;
   display: grid;
+  height: 100%;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 70px 6fr;
   grid-template-areas:
@@ -55,6 +56,7 @@
   padding-right: 50px;
   overflow: auto;
   overflow-x: hidden;
+  height: 100%;
 }
 
 .text-area {
@@ -62,6 +64,7 @@
   background: rgba(109, 108, 109, 0.274);
   text-align: center;
   overflow: auto;
+  height: 100%;
 }
 
 .users-display {
@@ -90,6 +93,7 @@
     bottom: 0;
     overflow: hidden;
     display: grid;
+    height: 100%;
     grid-template-columns: 0.5fr 0.5fr;
     grid-template-rows: 70px 6fr;
     grid-template-areas:
