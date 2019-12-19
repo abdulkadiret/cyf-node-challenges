@@ -39,7 +39,12 @@ class Home extends Component {
     return (
       <div className="app">
         <div className="app-header">
-          <h1 className="app-title">WeeApp</h1>
+          <h1 className="app-title">
+            <strong>W</strong>
+            <small>ee</small>
+            <strong>C</strong>
+            <small>hat</small>
+          </h1>
           {user ? (
             <button
               className="btn btn-primary"

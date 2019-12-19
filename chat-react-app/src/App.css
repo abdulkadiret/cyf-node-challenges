@@ -74,6 +74,7 @@
 
 .app-title {
   text-shadow: 5rem;
+  font-family: URW Chancery L, monospace;
 }
 
 @media only screen and (max-width: 680px) {
