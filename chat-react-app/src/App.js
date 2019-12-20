@@ -9,7 +9,6 @@ const auth = Component => {
   return () => {
     const user = localStorage.getItem("signedInUserId");
     const isLoggedIn = user;
-    console.log(isLoggedIn);
     if (isLoggedIn) {
       return <Component />;
     }
