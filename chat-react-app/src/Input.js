@@ -41,7 +41,11 @@ class Form extends Component {
 
   render() {
     return (
-      <form onSubmit={this.handleMessagePost} type="submit">
+      <form
+        className="text-submit-form"
+        onSubmit={this.handleMessagePost}
+        type="submit"
+      >
         <input
           scrolling="no"
           className="text-input scroll"
