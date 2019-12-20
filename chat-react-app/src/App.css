@@ -18,6 +18,7 @@
   grid-template-areas:
     "h h"
     "c c";
+  -webkit-overflow-scrolling: touch;
 }
 
 .app-header {
