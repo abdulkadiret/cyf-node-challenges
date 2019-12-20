@@ -11,6 +11,7 @@
   border-top: 2px solid lightskyblue;
   background-color: #f1f1f1;
   border-radius: 0;
+  -webkit-appearance: none;
 }
 
 .text-input {
@@ -20,7 +21,9 @@
   background-color: transparent;
   border: 0px solid;
   border-radius: 0;
+  -webkit-appearance: none;
 }
+
 .scroll::-webkit-scrollbar {
   display: none;
 }
