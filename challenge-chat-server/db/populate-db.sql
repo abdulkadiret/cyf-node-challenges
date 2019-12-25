@@ -24,39 +24,19 @@ VALUES
 INSERT INTO messages
     (message, user_id)
 VALUES
-    ('Message number two', 1);
+    ('It is a WeeChat app. Let us have a wee chat', 1);
 
 INSERT INTO messages
     (message, user_id)
 VALUES
-    ('Message number three', 1);
+    ('Hello Akey', 2);
 
 INSERT INTO messages
     (message, user_id)
 VALUES
-    ('Hello world', 2);
+    ('Hey Akey, it is cool!', 3);
 
 INSERT INTO messages
     (message, user_id)
 VALUES
-    ('Message number two', 2);
-
-INSERT INTO messages
-    (message, user_id)
-VALUES
-    ('Message number three', 2);
-
-INSERT INTO messages
-    (message, user_id)
-VALUES
-    ('Hello world', 3);
-
-INSERT INTO messages
-    (message, user_id)
-VALUES
-    ('Message number two', 3);
-
-INSERT INTO messages
-    (message, user_id)
-VALUES
-    ('Message number three', 3);
+    ('Welcome guys to my chat app', 1);
