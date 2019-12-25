@@ -30,3 +30,21 @@
 .scroll::-webkit-scrollbar {
   display: none;
 }
+
+@media only screen and (max-width: 767px) {
+  .text-submit-form {
+    padding-right: 0;
+    padding-left: 0;
+  }
+  .text-input {
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+  .text-input,
+  input::-webkit-input-placeholder {
+    font-size: 14px;
+  }
+  .scroll::-webkit-scrollbar {
+    display: none;
+  }
+}
