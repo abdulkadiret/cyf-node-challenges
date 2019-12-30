@@ -34,6 +34,7 @@ class Login extends Component {
             localStorage.setItem("userId", res.data.user_id);
 
             window.location.href = "/";
+            alert(res.message);
           } else {
             this.setState({
               isError: true,
