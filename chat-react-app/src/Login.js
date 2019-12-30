@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./Login.css";
 import Button from "./Button";
 import { Link } from "react-router-dom";
+import swal from "sweetalert";
 
 class Login extends Component {
   state = {
@@ -33,8 +34,15 @@ class Login extends Component {
             );
             localStorage.setItem("userId", res.data.user_id);
 
-            window.location.href = "/";
-            alert(res.message);
+            swal({
+              title: res.message,
+              text: "Redirecting...",
+              icon: "success",
+              timer: 1500,
+              buttons: false
+            }).then(() => {
+              window.location.href = "/";
+            });
           } else {
             this.setState({
               isError: true,
