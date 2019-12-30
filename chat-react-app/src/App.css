@@ -44,7 +44,7 @@
   left: 0;
   right: 0;
   grid-template-columns: 1fr 5fr;
-  grid-template-rows: 0.2fr 4fr 70px;
+  grid-template-rows: 0.2fr 4fr 60px;
   grid-template-areas:
     "ud m"
     "u m"
@@ -73,7 +73,7 @@
   overflow-x: hidden;
   height: 100%;
   top: 70px;
-  bottom: 70px;
+  bottom: 60px;
   -webkit-overflow-scrolling: touch;
 }
 
@@ -84,7 +84,7 @@
   overflow: auto;
   height: 100%;
   width: auto;
-  top: 70px;
+  top: 60px;
   bottom: 0;
   right: 0;
 }
@@ -135,7 +135,7 @@
     left: 0;
     right: 0;
     grid-template-columns: 5fr 1fr;
-    grid-template-rows: 0.2fr 4fr 50px;
+    grid-template-rows: 0.2fr 4fr 60px;
     grid-template-areas:
       "m ud"
       "m u"
