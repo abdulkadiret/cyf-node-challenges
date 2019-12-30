@@ -5,9 +5,10 @@ import { Link } from "react-router-dom";
 
 class Login extends Component {
   state = {
-    email: null,
+    email: "",
     password: "",
-    isError: false
+    isError: false,
+    message: ""
   };
 
   onLogin = e => {
@@ -36,14 +37,14 @@ class Login extends Component {
           } else {
             this.setState({
               isError: true,
-              message: res.data.message
+              message: res.message
             });
           }
         })
         .catch(error => {
           this.setState({
             isError: true,
-            message: "There is an error occurred, Please try again!"
+            message: this.state.message
           });
         });
     }
@@ -57,6 +58,7 @@ class Login extends Component {
   };
 
   render() {
+    const { isError } = this.state;
     return (
       <div className="app">
         <div className="app-login">
@@ -79,6 +81,9 @@ class Login extends Component {
                 onChange={this.handleInputChange}
               />
             </div>
+            {isError ? (
+              <div className="text-danger">{this.state.message}</div>
+            ) : null}
             <Button name="Login" />
             <br />
             <p>
