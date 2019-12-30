@@ -76,7 +76,7 @@ router.post("/login", (req, res) => {
       if (data && data.email && data.password !== password) {
         res.send({
           success: false,
-          message: "Your password is not match"
+          message: "Something went wrong! Please check email or password!"
         });
       }
       if (data && data.email && data.password === password) {
