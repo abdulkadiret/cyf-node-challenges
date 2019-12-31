@@ -1,10 +1,11 @@
 .text-submit-form {
   display: inline-block;
   box-sizing: border-box;
-  width: 100%;
+  width: 68%;
   height: 60px;
-  top: 60px;
   bottom: 0;
+  left: 0;
+  position: fixed;
   padding-right: 100px;
   padding-left: 40px;
   resize: none;

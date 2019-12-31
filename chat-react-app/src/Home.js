@@ -39,7 +39,7 @@ class Home extends Component {
     return (
       <div className="app">
         <div className="app-header">
-          <h1 className="app-title">
+          <h1>
             <strong>W</strong>
             <small>ee</small>
             <strong>C</strong>
@@ -60,20 +60,9 @@ class Home extends Component {
           <Redirect to="/login" />
         ) : (
           <div className="chat-app">
-            <div className="users-display">
-              <h4>
-                <small>Online Users</small>
-              </h4>
-            </div>
-            <div className="users-panel">
-              <UsersPanel />
-            </div>
-            <div className="messages-board">
-              <MessagesList />
-            </div>
-            <div className="text-area">
-              <Input user={user} />
-            </div>
+            <MessagesList />
+            <Input user={user} />
+            <UsersPanel />
           </div>
         )}
       </div>
@@ -82,3 +71,4 @@ class Home extends Component {
 }
 
 export default Home;
+// className="app-title"

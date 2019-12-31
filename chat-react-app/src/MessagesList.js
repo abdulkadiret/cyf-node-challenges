@@ -132,7 +132,7 @@ class MessagesList extends Component {
     const userId = localStorage.getItem("userId");
     const { isInEditMode, editModeId } = this.state;
     return (
-      <div>
+      <>
         <ul className="messages">
           {this.state.messages.map((message, index) => {
             return (
@@ -225,7 +225,7 @@ class MessagesList extends Component {
           })}
         </ul>
         <div ref={this.messagesEnd}></div>
-      </div>
+      </>
     );
   }
 }

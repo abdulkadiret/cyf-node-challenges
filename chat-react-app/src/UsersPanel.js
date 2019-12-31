@@ -37,11 +37,16 @@ class UsersPanel extends Component {
     const { users } = this.state;
     if (users) {
       return (
-        <ul>
-          {users.map((user, index) => {
-            return <li key={index}>{user.name}</li>;
-          })}
-        </ul>
+        <div className="users-display">
+          <h4>
+            <small>Online Users</small>
+          </h4>
+          <ul>
+            {users.map((user, index) => {
+              return <li key={index}>{user.name}</li>;
+            })}
+          </ul>
+        </div>
       );
     } else {
       return <p>Loading... </p>;

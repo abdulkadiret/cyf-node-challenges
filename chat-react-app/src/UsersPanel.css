@@ -1,5 +1,31 @@
+.users-display {
+  text-align: center;
+  background: rgba(109, 108, 109, 0.274);
+  height: auto;
+  max-width: 32%;
+  resize: none;
+  position: fixed;
+  top: 70px;
+  right: 0;
+  height: 100%;
+  z-index: 0;
+  padding: 10px;
+}
+
+.users-display ul {
+  text-align: start;
+  margin-left: 10px;
+  padding-left: 15px;
+}
+
 @media only screen and (max-width: 850px) {
   ul {
     padding-left: 10px;
+  }
+}
+
+@media only screen and (min-width: 991px) {
+  .users-display {
+    right: 15px;
   }
 }
