@@ -15,7 +15,12 @@
 .users-display ul {
   text-align: start;
   margin-left: 10px;
-  padding-left: 15px;
+  padding-left: 3px;
+}
+
+.users-display h1 {
+  font-size: 17px;
+  color: green;
 }
 
 @media only screen and (max-width: 850px) {

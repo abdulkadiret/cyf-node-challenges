@@ -24,7 +24,7 @@
   border-width: 7px 0px 15px 18px;
   border-color: transparent rgb(226, 190, 122);
   display: block;
-  z-index: 1;
+  z-index: 0;
   left: 4px;
   top: -10px;
   margin-top: 4px;

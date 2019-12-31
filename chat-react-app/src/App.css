@@ -24,9 +24,9 @@
   top: 0;
   left: 0;
   right: 0;
-  color: rgb(12, 2, 2);
+  color: white;
   padding-bottom: 5px;
-  background: rgba(109, 108, 109, 0.274);
+  background: radial-gradient(#000000, transparent);
   border-bottom: 2px solid gainsboro;
 }
 
@@ -83,7 +83,7 @@
 
 @media only screen and (max-width: 680px) {
   .app {
-    /* background-image: url("https://backgrounddownload.com/wp-content/uploads/2018/09/chat-background-tumblr-3.jpg"); */
+    background-image: url("https://backgrounddownload.com/wp-content/uploads/2018/09/chat-background-tumblr-3.jpg");
   }
 }
 

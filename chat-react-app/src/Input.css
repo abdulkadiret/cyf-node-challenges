@@ -6,8 +6,6 @@
   bottom: 0;
   left: 0;
   position: fixed;
-  padding-right: 100px;
-  padding-left: 40px;
   resize: none;
   border-top: 1px solid gainsboro;
   border-radius: 0;
@@ -33,10 +31,6 @@
 }
 
 @media only screen and (max-width: 767px) {
-  .text-submit-form {
-    padding-right: 0;
-    padding-left: 0;
-  }
   .text-input {
     padding-right: 10px;
     padding-left: 10px;

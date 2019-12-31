@@ -38,9 +38,7 @@ class UsersPanel extends Component {
     if (users) {
       return (
         <div className="users-display">
-          <h4>
-            <small>Online Users</small>
-          </h4>
+          <h1>Online Users</h1>
           <ul>
             {users.map((user, index) => {
               return <li key={index}>{user.name}</li>;
