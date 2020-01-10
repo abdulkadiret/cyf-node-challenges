@@ -31,14 +31,12 @@
   padding-right: 10px;
 }
 
-.messages li {
-  list-style-type: none;
+.messages ul {
+  padding-left: 2%;
 }
 
-@media only screen and (max-width: 767px) {
-  .messages {
-    padding-left: 15px;
-  }
+.messages li {
+  list-style-type: none;
 }
 
 .sender {
@@ -71,11 +69,6 @@
   padding: 0;
 }
 
-/* textarea {
-  display: block;
-  padding: 0 400px 0 0;
-} */
-
 #editTextarea {
   resize: none;
   background-color: rgb(226, 190, 122);
@@ -101,25 +94,6 @@
   box-shadow: none !important;
   z-index: 0;
 }
-
-/* .input-group {
-  display: inline-block;
-  background-color: transparent;
-  padding-top: 15px;
-  padding-left: 15px;
-  padding-right: 15px;
-  padding-bottom: 3px;
-  border-radius: 20px 30px 30px;
-  position: inherit;
-  min-width: 105px;
-  min-height: 50px;
-  max-width: 35vmax;
-  overflow-wrap: break-word;
-  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
-  border-bottom-style: groove;
-  margin-top: 3px;
-  margin-bottom: 16px;
-} */
 
 .input-group {
   display: block;

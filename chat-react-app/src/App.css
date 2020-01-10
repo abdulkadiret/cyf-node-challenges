@@ -64,13 +64,14 @@
 .users-panel {
   grid-area: u;
   z-index: 0;
-  padding-left: 10px;
+  padding-left: 15px;
   padding-bottom: 5px;
   background: rgba(109, 108, 109, 0.274);
   height: 100%;
   top: 70px;
   bottom: 0;
-  overflow: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
   -webkit-overflow-scrolling: touch;
   min-width: 120px;
 }
@@ -113,6 +114,7 @@
 }
 .users-display h1 {
   font-size: 17px;
+  font-weight: bold;
   color: green;
 }
 
@@ -121,70 +123,9 @@
   font-family: URW Chancery L, monospace;
 }
 
-/* @media only screen and (max-width: 680px) {
-  .app {
-    background-image: url("https://backgrounddownload.com/wp-content/uploads/2018/09/chat-background-tumblr-3.jpg");
-    background-size: cover;
-    background-position: center;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    overflow: hidden;
-    display: grid;
-    height: 100%;
-    width: 100%;
-    grid-template-columns: 0.5fr 0.5fr;
-    grid-template-rows: 70px 6fr;
-    grid-template-areas:
-      "h h"
-      "c c";
-  }
-} */
-
-/* @media only screen and (max-width: 767px) {
-  .chat-app {
-    grid-area: c;
-    display: grid;
-    height: 100%;
-    top: 70px;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    grid-template-columns: 5fr 1fr;
-    grid-template-rows: 0.2fr 4fr 60px;
-    grid-template-areas:
-      "m ud"
-      "m u"
-      "t u";
-    overflow: auto;
-    -webkit-overflow-scrolling: touch;
-  } */
-
 .messages-board {
   padding-right: 15px;
 }
 .text-area {
   left: 0;
 }
-
-/* @media only screen and (max-width: 767px) {
-  .app {
-    background-image: url("https://previews.123rf.com/images/amasterpics123/amasterpics1231202/amasterpics123120200180/12432513-chatting-online-concept-3d-man-using-laptop-computer-with-speech-bubble-on-white-background.jpg");
-    background-size: cover;
-    background-position: center;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    overflow: hidden;
-    display: grid;
-    grid-template-columns: 0.5fr 0.5fr;
-    grid-template-rows: 70px 6fr;
-    grid-template-areas:
-      "h h"
-      "c c";
-  }
-} */

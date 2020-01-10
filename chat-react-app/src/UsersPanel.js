@@ -37,7 +37,7 @@ class UsersPanel extends Component {
     const { users } = this.state;
     if (users) {
       return (
-        <ul>
+        <ul className="users-list">
           {users.map((user, index) => {
             return <li key={index}>{user.name}</li>;
           })}

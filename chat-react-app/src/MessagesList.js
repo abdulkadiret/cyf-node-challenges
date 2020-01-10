@@ -132,8 +132,8 @@ class MessagesList extends Component {
     const userId = localStorage.getItem("userId");
     const { isInEditMode, editModeId } = this.state;
     return (
-      <div>
-        <ul className="messages">
+      <div className="messages">
+        <ul>
           {this.state.messages.map((message, index) => {
             return (
               <li key={index}>
