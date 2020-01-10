@@ -61,9 +61,7 @@ class Home extends Component {
         ) : (
           <div className="chat-app">
             <div className="users-display">
-              <h4>
-                <small>Online Users</small>
-              </h4>
+              <h1>Online Users</h1>
             </div>
             <div className="users-panel">
               <UsersPanel />

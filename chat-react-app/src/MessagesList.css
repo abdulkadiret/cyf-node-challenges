@@ -99,6 +99,7 @@
   border: none !important;
   outline: none !important;
   box-shadow: none !important;
+  z-index: 0;
 }
 
 /* .input-group {

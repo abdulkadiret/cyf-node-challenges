@@ -33,11 +33,19 @@
   padding-bottom: 5px;
   background: rgba(109, 108, 109, 0.274);
   border-bottom: 2px solid gainsboro;
+  z-index: 1;
+}
+
+@media only screen and (max-width: 680px) {
+  .app {
+    background-image: url("https://backgrounddownload.com/wp-content/uploads/2018/09/chat-background-tumblr-3.jpg");
+  }
 }
 
 .chat-app {
   grid-area: c;
   display: grid;
+  z-index: 0;
   height: 100%;
   top: 70px;
   bottom: 0;
@@ -55,7 +63,9 @@
 
 .users-panel {
   grid-area: u;
+  z-index: 0;
   padding-left: 10px;
+  padding-bottom: 5px;
   background: rgba(109, 108, 109, 0.274);
   height: 100%;
   top: 70px;
@@ -67,6 +77,7 @@
 
 .messages-board {
   grid-area: m;
+  z-index: 0;
   padding-top: 10px;
   padding-right: 50px;
   overflow: auto;
@@ -79,6 +90,7 @@
 
 .text-area {
   grid-area: t;
+  z-index: 1;
   background: rgba(109, 108, 109, 0.274);
   text-align: center;
   overflow: auto;
@@ -91,11 +103,17 @@
 
 .users-display {
   grid-area: ud;
+  z-index: 0;
   text-align: center;
   background: rgba(109, 108, 109, 0.274);
   height: auto;
   min-width: 120px;
   resize: none;
+  padding-top: 5px;
+}
+.users-display h1 {
+  font-size: 17px;
+  color: green;
 }
 
 .app-title {
@@ -103,7 +121,7 @@
   font-family: URW Chancery L, monospace;
 }
 
-@media only screen and (max-width: 680px) {
+/* @media only screen and (max-width: 680px) {
   .app {
     background-image: url("https://backgrounddownload.com/wp-content/uploads/2018/09/chat-background-tumblr-3.jpg");
     background-size: cover;
@@ -123,9 +141,9 @@
       "h h"
       "c c";
   }
-}
+} */
 
-@media only screen and (max-width: 767px) {
+/* @media only screen and (max-width: 767px) {
   .chat-app {
     grid-area: c;
     display: grid;
@@ -142,13 +160,13 @@
       "t u";
     overflow: auto;
     -webkit-overflow-scrolling: touch;
-  }
-  .messages-board {
-    padding-right: 15px;
-  }
-  .text-area {
-    left: 0;
-  }
+  } */
+
+.messages-board {
+  padding-right: 15px;
+}
+.text-area {
+  left: 0;
 }
 
 /* @media only screen and (max-width: 767px) {
