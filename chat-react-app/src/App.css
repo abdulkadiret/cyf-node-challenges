@@ -13,11 +13,11 @@
   display: grid;
   height: 100%;
   width: 100%;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   grid-template-rows: 70px 6fr;
   grid-template-areas:
-    "h h"
-    "c c";
+    "h"
+    "c";
   -webkit-overflow-scrolling: touch;
 }
 
@@ -27,13 +27,14 @@
   padding-top: 1rem;
   top: 0;
   bottom: 70px;
+  height: auto;
   left: 0;
   right: 0;
   color: rgb(12, 2, 2);
   padding-bottom: 5px;
   background: rgba(109, 108, 109, 0.274);
   border-bottom: 2px solid gainsboro;
-  z-index: 1;
+  z-index: 0;
 }
 
 @media only screen and (max-width: 680px) {
@@ -46,7 +47,7 @@
   grid-area: c;
   display: grid;
   z-index: 0;
-  height: 100%;
+  height: auto;
   top: 70px;
   bottom: 0;
   left: 0;
@@ -57,13 +58,13 @@
     "ud m"
     "u m"
     "u t";
-  overflow: auto;
+  overflow-y: auto;
   -webkit-overflow-scrolling: touch;
 }
 
 .users-panel {
   grid-area: u;
-  z-index: 0;
+  z-index: 1;
   padding-left: 15px;
   padding-bottom: 5px;
   background: rgba(109, 108, 109, 0.274);
@@ -78,12 +79,12 @@
 
 .messages-board {
   grid-area: m;
-  z-index: 0;
+  z-index: 1;
   padding-top: 10px;
   padding-right: 50px;
-  overflow: auto;
+  overflow-y: auto;
   overflow-x: hidden;
-  height: 100%;
+  height: auto;
   top: 70px;
   bottom: 60px;
   -webkit-overflow-scrolling: touch;
@@ -104,7 +105,7 @@
 
 .users-display {
   grid-area: ud;
-  z-index: 0;
+  z-index: 1;
   text-align: center;
   background: rgba(109, 108, 109, 0.274);
   height: auto;
