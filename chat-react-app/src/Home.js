@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
+import logo from "./logo.svg";
 import Input from "./Input";
 import UsersPanel from "./UsersPanel";
 import MessagesList from "./MessagesList";
@@ -39,12 +40,7 @@ class Home extends Component {
     return (
       <div className="app">
         <div className="app-header">
-          <h1 className="app-title">
-            <strong>W</strong>
-            <small>ee</small>
-            <strong>C</strong>
-            <small>hat</small>
-          </h1>
+          <img src={logo} className="App-logo" alt="logo" />
           {user ? (
             <button
               className="btn btn-primary"
