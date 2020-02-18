@@ -19,7 +19,7 @@
       "type": "image/png"
     }
   ],
-  "start_url": "./index.html",
+  "start_url": "/index.html",
   "display": "standalone",
   "theme_color": "#ffe9d2",
   "background_color": "#AA7700"
