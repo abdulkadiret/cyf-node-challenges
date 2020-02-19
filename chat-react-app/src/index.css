@@ -9,6 +9,8 @@ body {
   position: relative;
   overflow: hidden;
   min-height: 100vh;
+  /* Disables pull-to-refresh but allows overscroll glow effects. */
+  overscroll-behavior-y: contain;
 }
 
 code {
