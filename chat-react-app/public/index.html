@@ -8,11 +8,36 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0"
     />
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <link rel="shortcut icon" href="%PUBLIC_URL%/images/favicon.ico" />
 
     <!-- Tell iOS it's a PWA -->
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-title" content="WeeChat" />
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+
+    <!-- icons for iOS -->
+    <link
+      rel="apple-touch-icon"
+      sizes="152x152"
+      href="/images/ipad-touch-icon-152x152.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="167x167"
+      href="/images/ipad-retina-touch-icon-167x167.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/images/apple-touch-icon-180x180.png"
+    />
+
+    <!-- Splash screen for iOS -->
     <link
       href="images/splashscreens/iphone6_splash.png"
       media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2)"
@@ -57,29 +82,6 @@
       href="images/splashscreens/ipadpro2_splash.png"
       media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2)"
       rel="apple-touch-startup-image"
-    />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <link rel="shortcut icon" href="%PUBLIC_URL%/images/favicon.ico" />
-
-    <!-- icons for iOS -->
-    <link
-      rel="apple-touch-icon"
-      sizes="152x152"
-      href="/images/ipad-touch-icon-152x152.png"
-    />
-    <link
-      rel="apple-touch-icon"
-      sizes="167x167"
-      href="/images/ipad-retina-touch-icon-167x167.png"
-    />
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="/images/apple-touch-icon-180x180.png"
     />
 
     <!--
