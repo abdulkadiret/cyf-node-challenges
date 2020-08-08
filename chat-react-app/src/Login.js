@@ -1,68 +1,68 @@
-import React, { Component } from "react";
-import "./Login.css";
-import Button from "./Button";
-import { Link } from "react-router-dom";
-import swal from "sweetalert";
+import React, { Component } from 'react';
+import './Login.css';
+import Button from './Button';
+import { Link } from 'react-router-dom';
+import swal from 'sweetalert';
 
 class Login extends Component {
   state = {
-    email: "",
-    password: "",
+    email: '',
+    password: '',
     isError: false,
-    message: ""
+    message: '',
   };
 
-  onLogin = e => {
+  onLogin = (e) => {
     e.preventDefault();
     const { email, password } = this.state;
     if (email && password) {
-      const url = "/api/users/login";
+      const url = '/api/users/login';
       fetch(url, {
-        method: "POST",
+        method: 'POST',
         headers: {
-          "Content-Type": "application/json"
+          'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ email, password })
+        body: JSON.stringify({ email, password }),
       })
-        .then(res => res.json())
-        .then(res => {
+        .then((res) => res.json())
+        .then((res) => {
           if (res && res.success) {
-            localStorage.setItem("user", res.data.name);
+            localStorage.setItem('user', res.data.name);
             localStorage.setItem(
-              "signedInUserId",
+              'signedInUserId',
               res.signedIn.signed_in_user_id
             );
-            localStorage.setItem("userId", res.data.user_id);
+            localStorage.setItem('userId', res.data.user_id);
 
             swal({
               title: res.message,
-              text: "Redirecting...",
-              icon: "success",
+              text: 'Redirecting...',
+              icon: 'success',
               timer: 1500,
-              buttons: false
+              buttons: false,
             }).then(() => {
-              window.location.href = "/";
+              window.location.href = '/';
             });
           } else {
             this.setState({
               isError: true,
-              message: res.message
+              message: res.message,
             });
           }
         })
-        .catch(error => {
+        .catch((error) => {
           this.setState({
             isError: true,
-            message: this.state.message
+            message: this.state.message,
           });
         });
     }
   };
 
-  handleInputChange = e => {
+  handleInputChange = (e) => {
     e.preventDefault();
     this.setState({
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
   };
 
@@ -96,8 +96,8 @@ class Login extends Component {
             <Button name="Login" />
             <br />
             <p>
-              If you don't have an account <Link to="/signup">click here</Link>{" "}
-              to creat an account
+              If you don't have an account <Link to="/signup">click here</Link>{' '}
+              to create an account
             </p>
           </form>
         </div>
